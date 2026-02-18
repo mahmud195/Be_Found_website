@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Globe } from 'lucide-react';
+import logo from '../assets/logos/Primary_Logo_BF_White.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -10,48 +11,79 @@ export default function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    // Scroll-Spy logic
+    const sections = ['home', 'about', 'services', 'projects', 'partners', 'contact'];
+    const observers = sections.map((section) => {
+      const el = document.getElementById(section);
+      if (!el) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setActiveSection(section);
+          }
+        },
+        { threshold: 0.5 }
+      );
+
+      observer.observe(el);
+      return observer;
+    });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observers.forEach((obs) => obs?.disconnect());
+    };
   }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        scrolled ? 'bg-[#25282A]' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled ? 'bg-[#25282A]/95 backdrop-blur-md py-4' : 'bg-transparent py-6'
+        }`}
     >
-      <div className="max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <Globe className="w-5 h-5 text-white" />
-          <a href="#" className="text-white text-xl tracking-wider font-light">
-            BeFound
+      <div className="max-w-7xl mx-auto px-8 relative flex items-center justify-center min-h-[48px]">
+        {/* Brand Group - Absolutely Positioned Left */}
+        <div className="absolute left-8 flex items-center">
+          <a href="#" className="flex items-center space-x-4 group">
+            <img src={logo} alt="BeFound Logo" className="h-7 w-auto transition-transform duration-500 group-hover:scale-105" />
+            <div className="h-4 w-px bg-white/20 hidden md:block" />
+            <span className="text-white text-lg tracking-widest font-normal font-arabic mt-1" style={{ direction: 'rtl' }}>
+              بيفاوند
+            </span>
           </a>
         </div>
 
-        <div className="hidden lg:flex items-center space-x-16">
-          {['Home', 'About Us', 'Services', 'Projects', 'Partners'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-white text-sm tracking-wide font-light hover:text-[#E56A54] transition-colors duration-300 relative group"
-            >
-              {item}
-              <span className="absolute bottom-0 left-0 w-0 h-px bg-[#E56A54] transition-all duration-300 group-hover:w-full" />
-            </a>
-          ))}
+        {/* Centered Navigation Menu */}
+        <div className="hidden lg:flex items-center space-x-12">
+          {['Home', 'About', 'Services', 'Projects', 'Partners'].map((item) => {
+            const id = item.toLowerCase();
+            const isActive = activeSection === id;
+            return (
+              <a
+                key={item}
+                href={`#${id}`}
+                className={`text-xs tracking-[0.2em] uppercase transition-all duration-500 relative group ${isActive ? 'text-[#E56A54] scale-125 font-semibold' : 'text-[#E6F0F0] font-light hover:text-[#E56A54]'
+                  }`}
+              >
+                {item}
+                <span className={`absolute -bottom-1 left-0 h-px bg-[#E56A54] transition-all duration-500 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Contact Button - Absolutely Positioned Right */}
+        <div className="absolute right-8 hidden lg:block">
           <a
             href="#contact"
-            className="text-white text-sm tracking-wide font-light hover:text-[#E56A54] transition-colors duration-300 relative group"
+            className={`px-6 py-2 border transition-all duration-700 text-xs tracking-[0.2em] uppercase ${activeSection === 'contact'
+              ? 'bg-[#E56A54] border-[#E56A54] text-white scale-110'
+              : 'border-[#E6F0F0]/10 text-[#E6F0F0] font-light hover:bg-[#E6F0F0] hover:text-[#25282A]'
+              }`}
           >
-            Contact Us
-            <span className="absolute bottom-0 left-0 w-0 h-px bg-[#E56A54] transition-all duration-300 group-hover:w-full" />
+            Contact
           </a>
-        </div>
-
-        <div className="flex items-center space-x-2">
-          <Globe className="w-5 h-5 text-white" />
-          <span className="text-white text-sm tracking-widest font-light hidden md:block" style={{ direction: 'rtl' }}>
-            بيفاوند
-          </span>
         </div>
       </div>
     </nav>
