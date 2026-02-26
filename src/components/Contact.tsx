@@ -46,12 +46,12 @@ export default function Contact() {
 
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
-                <Mail className="w-5 h-5 text-[#E56A54] mt-1" />
+                <Mail className="w-5 h-5 text-[#E6F0F0] mt-1" />
                 <div>
                   <p className="text-[#E6F0F0] font-light mb-1">Email</p>
                   <a
                     href="mailto:studio@befound.com"
-                    className="text-[#E6F0F0]/60 hover:text-[#E56A54] transition-colors duration-300"
+                    className="text-[#E6F0F0]/60 hover:text-[#E6F0F0] transition-colors duration-300"
                   >
                     studio@befound.com
                   </a>
@@ -59,7 +59,7 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start space-x-4">
-                <MapPin className="w-5 h-5 text-[#E56A54] mt-1" />
+                <MapPin className="w-5 h-5 text-[#E6F0F0] mt-1" />
                 <div>
                   <p className="text-[#E6F0F0] font-light mb-1">Studio</p>
                   <p className="text-[#E6F0F0]/60">
@@ -98,7 +98,7 @@ export default function Contact() {
               <a
                 key={social}
                 href="#"
-                className="text-[#E6F0F0]/60 text-sm tracking-[0.2em] uppercase font-light hover:text-[#E56A54] transition-colors duration-300"
+                className="text-[#E6F0F0]/60 text-sm tracking-[0.2em] uppercase font-light hover:text-[#E6F0F0] transition-colors duration-300"
               >
                 {social}
               </a>

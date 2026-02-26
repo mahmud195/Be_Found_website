@@ -62,7 +62,7 @@ export default function Partners() {
                                 style={{ transitionDelay: `${index * 300}ms` }}
                             >
                                 <div className="space-y-6">
-                                    <h3 className="text-[#E56A54] text-sm tracking-[0.3em] font-light uppercase">
+                                    <h3 className="text-[#E6F0F0]/60 text-sm tracking-[0.3em] font-light uppercase">
                                         {partner.role}
                                     </h3>
                                     <h4 className="text-3xl text-[#E6F0F0] font-light">
