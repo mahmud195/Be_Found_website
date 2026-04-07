@@ -113,6 +113,7 @@ export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const wheelDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Drag state
   const [dragStartX, setDragStartX] = useState(0);
@@ -236,6 +237,14 @@ export default function Projects() {
             }`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onWheel={(e) => {
+            if (wheelDebounceRef.current) return;
+            if (e.deltaY > 0) nextSlide();
+            else prevSlide();
+            wheelDebounceRef.current = setTimeout(() => {
+              wheelDebounceRef.current = null;
+            }, 700);
+          }}
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
