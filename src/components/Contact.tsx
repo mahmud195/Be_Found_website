@@ -87,25 +87,6 @@ export default function Contact() {
           </div>
         </div>
 
-        <div
-          className={`mt-32 pt-16 border-t border-[#E6F0F0]/10 flex flex-col md:flex-row justify-between items-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100' : 'opacity-0'
-            }`}
-        >
-          <p className="text-[#E6F0F0]/30 text-sm tracking-wide font-light mb-4 md:mb-0">
-            © 2025 BeFound Architecture Studio
-          </p>
-          <div className="flex space-x-8">
-            {['Instagram', 'LinkedIn', 'Behance'].map((social) => (
-              <a
-                key={social}
-                href="#"
-                className="text-[#E6F0F0]/60 text-sm tracking-[0.2em] uppercase font-light hover:text-[#E6F0F0] transition-colors duration-300"
-              >
-                {social}
-              </a>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
 
