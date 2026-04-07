@@ -28,6 +28,7 @@ export default function About() {
         <img
           src={aboutBg}
           alt="About background"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
@@ -45,6 +46,7 @@ export default function About() {
             <img
               src={aboutPattern}
               alt="About us typography pattern"
+              loading="lazy"
               className="w-full h-auto max-h-[550px] object-contain"
             />
             {/* "About Us" title overlaid on center of pattern */}

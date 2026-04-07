@@ -40,93 +40,6 @@ const services = [
   },
 ];
 
-/* ─── Book-open hover styles ─── */
-const carouselStyles = `
-  /* Hide scrollbar but keep scrollable */
-  .services-scroll-track {
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .services-scroll-track::-webkit-scrollbar {
-    display: none;
-  }
-
-  .service-card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-
-  .service-card .card-title-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    transition: opacity 0.5s ease 0.05s;
-  }
-  .service-card:hover .card-title-overlay {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .service-card .card-text-panel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    z-index: 15;
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.5s ease 0.1s;
-    will-change: transform, opacity;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem 2.5rem;
-    overflow-y: auto;
-  }
-  .service-card:hover .card-text-panel {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  .service-card .card-default-gradient {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(0,0,0,0.55) 0%,
-      rgba(0,0,0,0.15) 50%,
-      rgba(0,0,0,0.25) 100%
-    );
-    z-index: 5;
-    transition: opacity 0.5s ease;
-  }
-  .service-card:hover .card-default-gradient {
-    opacity: 0.3;
-  }
-
-  .service-card .card-text-panel::-webkit-scrollbar {
-    width: 3px;
-  }
-  .service-card .card-text-panel::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.3);
-    border-radius: 10px;
-  }
-
-  @media (max-width: 768px) {
-    .service-card .card-text-panel {
-      width: 70%;
-      padding: 1.5rem;
-    }
-  }
-`;
 
 // We triple the items for seamless infinite loop
 const REPEAT_COUNT = 3;
@@ -210,9 +123,7 @@ export default function Services() {
   const repeatedServices = Array.from({ length: REPEAT_COUNT }, () => services).flat();
 
   return (
-    <>
-      <style>{carouselStyles}</style>
-      <section
+    <section
         ref={sectionRef}
         id="services"
         className="min-h-screen bg-[#25282A] px-6 md:px-8 py-24 md:py-32 overflow-hidden"
@@ -347,7 +258,5 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </section>
-    </>
   );
 }

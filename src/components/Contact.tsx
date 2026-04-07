@@ -80,6 +80,7 @@ export default function Contact() {
               <img
                 src={contactImg}
                 alt="Studio space"
+                loading="lazy"
                 className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000"
               />
             </div>
@@ -91,7 +92,7 @@ export default function Contact() {
             }`}
         >
           <p className="text-[#E6F0F0]/30 text-sm tracking-wide font-light mb-4 md:mb-0">
-            © 2024 BeFound Architecture Studio
+            © 2025 BeFound Architecture Studio
           </p>
           <div className="flex space-x-8">
             {['Instagram', 'LinkedIn', 'Behance'].map((social) => (

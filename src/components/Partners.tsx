@@ -82,6 +82,7 @@ export default function Partners() {
                             <img
                                 src={partners[0].image}
                                 alt="Partner portrait"
+                                loading="lazy"
                                 className="w-full h-full object-cover"
                             />
                         </div>
