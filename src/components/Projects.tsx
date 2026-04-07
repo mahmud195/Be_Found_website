@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Abdelkreim Apartment
@@ -116,6 +116,13 @@ export default function Projects() {
   const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
   const [scale, setScale] = useState(1);
 
+  // Pan & pinch state for fullscreen zoom
+  const [panOffset, setPanOffset] = useState({ x: 0, y: 0 });
+  const [isPanning, setIsPanning] = useState(false);
+  const panStartRef = useRef({ x: 0, y: 0 });
+  const panOffsetStartRef = useRef({ x: 0, y: 0 });
+  const lastPinchDistRef = useRef<number | null>(null);
+
   useEffect(() => {
     if (selectedProject || fullscreenImage) {
       document.body.style.overflow = 'hidden';
@@ -231,7 +238,7 @@ export default function Projects() {
           <div className="flex items-center justify-center gap-4 md:gap-6 px-4">
             {/* Left peek card */}
             <div
-              className="hidden md:block flex-shrink-0 w-[8%] cursor-pointer transition-all duration-700 opacity-60 hover:opacity-80"
+              className="hidden md:block flex-shrink-0 w-[14%] cursor-pointer transition-all duration-700 opacity-60 hover:opacity-80"
               onClick={prevSlide}
               style={{ transform: `translateX(${dragOffset * 0.2}px)` }}
             >
@@ -290,7 +297,7 @@ export default function Projects() {
 
             {/* Right peek card */}
             <div
-              className="hidden md:block flex-shrink-0 w-[8%] cursor-pointer transition-all duration-700 opacity-60 hover:opacity-80"
+              className="hidden md:block flex-shrink-0 w-[14%] cursor-pointer transition-all duration-700 opacity-60 hover:opacity-80"
               onClick={nextSlide}
               style={{ transform: `translateX(${dragOffset * 0.2}px)` }}
             >
@@ -304,7 +311,23 @@ export default function Projects() {
             </div>
           </div>
 
-          {/* Navigation arrows for mobile */}
+          {/* Desktop navigation arrows (positioned on sides) */}
+          <div className="hidden md:block">
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 border border-white/30 text-white/70 flex items-center justify-center hover:bg-white/10 transition-colors rounded-full backdrop-blur-sm bg-black/20"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 border border-white/30 text-white/70 flex items-center justify-center hover:bg-white/10 transition-colors rounded-full backdrop-blur-sm bg-black/20"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
+
+          {/* Mobile navigation arrows */}
           <div className="flex md:hidden justify-center gap-8 mt-6">
             <button
               onClick={prevSlide}
@@ -382,13 +405,79 @@ export default function Projects() {
       {/* Deep Zoom Modal */}
       {fullscreenImage && (
         <div
-          className="fixed inset-0 z-[110] bg-black flex items-center justify-center overflow-hidden cursor-zoom-in"
+          className="fixed inset-0 z-[110] bg-black flex items-center justify-center overflow-hidden"
+          style={{ cursor: scale > 1 ? 'grab' : 'zoom-in', touchAction: 'none' }}
+          onWheel={(e) => {
+            e.preventDefault();
+            setScale((prev) => {
+              const next = prev - e.deltaY * 0.002;
+              const clamped = Math.min(Math.max(next, 1), 5);
+              if (clamped === 1) setPanOffset({ x: 0, y: 0 });
+              return clamped;
+            });
+          }}
+          onPointerDown={(e) => {
+            if ((e.pointerType === 'mouse' || e.pointerType === 'pen') && scale > 1) {
+              setIsPanning(true);
+              panStartRef.current = { x: e.clientX, y: e.clientY };
+              panOffsetStartRef.current = { ...panOffset };
+              (e.target as HTMLElement).setPointerCapture(e.pointerId);
+            }
+          }}
+          onPointerMove={(e) => {
+            if (isPanning && (e.pointerType === 'mouse' || e.pointerType === 'pen')) {
+              setPanOffset({
+                x: panOffsetStartRef.current.x + (e.clientX - panStartRef.current.x),
+                y: panOffsetStartRef.current.y + (e.clientY - panStartRef.current.y),
+              });
+            }
+          }}
+          onPointerUp={() => setIsPanning(false)}
+          onPointerLeave={() => setIsPanning(false)}
+          onTouchStart={(e) => {
+            if (e.touches.length === 2) {
+              const dx = e.touches[0].clientX - e.touches[1].clientX;
+              const dy = e.touches[0].clientY - e.touches[1].clientY;
+              lastPinchDistRef.current = Math.hypot(dx, dy);
+            } else if (e.touches.length === 1 && scale > 1) {
+              setIsPanning(true);
+              panStartRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+              panOffsetStartRef.current = { ...panOffset };
+            }
+          }}
+          onTouchMove={(e) => {
+            if (e.touches.length === 2 && lastPinchDistRef.current !== null) {
+              e.preventDefault();
+              const dx = e.touches[0].clientX - e.touches[1].clientX;
+              const dy = e.touches[0].clientY - e.touches[1].clientY;
+              const dist = Math.hypot(dx, dy);
+              const delta = dist - lastPinchDistRef.current;
+              lastPinchDistRef.current = dist;
+              setScale((prev) => {
+                const next = prev + delta * 0.008;
+                const clamped = Math.min(Math.max(next, 1), 5);
+                if (clamped === 1) setPanOffset({ x: 0, y: 0 });
+                return clamped;
+              });
+            } else if (e.touches.length === 1 && isPanning) {
+              setPanOffset({
+                x: panOffsetStartRef.current.x + (e.touches[0].clientX - panStartRef.current.x),
+                y: panOffsetStartRef.current.y + (e.touches[0].clientY - panStartRef.current.y),
+              });
+            }
+          }}
+          onTouchEnd={(e) => {
+            if (e.touches.length < 2) lastPinchDistRef.current = null;
+            if (e.touches.length === 0) setIsPanning(false);
+          }}
           onClick={() => {
-            if (scale === 1) setScale(1.5);
-            else if (scale === 1.5) setScale(2);
-            else {
-              setScale(1);
-              setFullscreenImage(null);
+            if (!isPanning) {
+              if (scale === 1) setScale(1.5);
+              else if (scale < 2) setScale(2);
+              else {
+                setScale(1);
+                setPanOffset({ x: 0, y: 0 });
+              }
             }
           }}
         >
@@ -397,6 +486,7 @@ export default function Projects() {
               e.stopPropagation();
               setFullscreenImage(null);
               setScale(1);
+              setPanOffset({ x: 0, y: 0 });
             }}
             className="absolute top-6 right-6 z-50 p-2 bg-white/10 text-white rounded-full hover:bg-white hover:text-black transition-colors"
           >
@@ -406,11 +496,12 @@ export default function Projects() {
           <img
             src={fullscreenImage}
             alt="Fullscreen zoom"
-            className="w-full h-full object-contain transition-transform duration-300"
-            style={{ transform: `scale(${scale})` }}
+            className="w-full h-full object-contain transition-transform duration-200 select-none"
+            style={{ transform: `scale(${scale}) translate(${panOffset.x / scale}px, ${panOffset.y / scale}px)` }}
+            draggable={false}
           />
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-sm tracking-widest pointer-events-none">
-            {scale === 1 ? 'CLICK TO ZOOM' : scale === 1.5 ? 'CLICK TO ZOOM MORE' : 'CLICK TO CLOSE'}
+            {scale <= 1 ? 'SCROLL OR PINCH TO ZOOM' : 'DRAG TO PAN • SCROLL TO ZOOM'}
           </div>
         </div>
       )}
