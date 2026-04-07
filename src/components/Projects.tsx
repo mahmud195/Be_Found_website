@@ -113,6 +113,8 @@ export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
+  const wheelDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Drag state
   const [dragStartX, setDragStartX] = useState(0);
@@ -151,6 +153,26 @@ export default function Projects() {
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
+  }, []);
+
+  // Wheel-to-navigate (non-passive so we can prevent page scroll)
+  useEffect(() => {
+    const el = sliderRef.current;
+    if (!el) return;
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      if (wheelDebounceRef.current) return;
+      if (e.deltaY > 0) {
+        setCurrentIndex((prev) => (prev + 1) % projects.length);
+      } else {
+        setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
+      }
+      wheelDebounceRef.current = setTimeout(() => {
+        wheelDebounceRef.current = null;
+      }, 700);
+    };
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    return () => el.removeEventListener('wheel', handleWheel);
   }, []);
 
   // Auto-play
@@ -232,6 +254,7 @@ export default function Projects() {
 
         {/* Slider */}
         <div
+          ref={sliderRef}
           className={`relative transition-all duration-1000 delay-300 touch-pan-y ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
             }`}
           onMouseEnter={() => setIsHovered(true)}
@@ -265,14 +288,14 @@ export default function Projects() {
                 opacity = 1;
                 zIndex = 30;
               } else if (isLeft) {
-                translateX = -105; // Move left by 105% of its width
-                cardScale = 0.66;  // Makes it look ~30% width overall
-                opacity = 0.6;
+                translateX = -108;
+                cardScale = 0.75;
+                opacity = 0.75;
                 zIndex = 20;
               } else if (isRight) {
-                translateX = 105;
-                cardScale = 0.66;
-                opacity = 0.6;
+                translateX = 108;
+                cardScale = 0.75;
+                opacity = 0.75;
                 zIndex = 20;
               } else if (offset < 0) {
                 translateX = -180;
