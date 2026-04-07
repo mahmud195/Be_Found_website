@@ -113,8 +113,6 @@ export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const wheelDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
   // Drag state
   const [dragStartX, setDragStartX] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
@@ -220,15 +218,6 @@ export default function Projects() {
           >
             Explore a curated selection of environments crafted by BeFound.
           </p>
-          <p
-            className="text-[#E6F0F0]/70 text-sm md:text-base leading-relaxed max-w-3xl text-justify"
-            style={{ fontFamily: "'Gambetta', serif", fontWeight: 300 }}
-          >
-            Our work spans the intersection of form and feeling, showcasing our commitment to creating
-            'quiet' spaces in a noisy world. Every project in our gallery is an exploration of harmony
-            merging artistic vision with functional excellence to deliver interiors and architecture
-            that invite you to pause, breathe, and feel truly at home.
-          </p>
         </div>
 
         {/* Slider */}
@@ -237,14 +226,6 @@ export default function Projects() {
             }`}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          onWheel={(e) => {
-            if (wheelDebounceRef.current) return;
-            if (e.deltaY > 0) nextSlide();
-            else prevSlide();
-            wheelDebounceRef.current = setTimeout(() => {
-              wheelDebounceRef.current = null;
-            }, 700);
-          }}
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
