@@ -8,7 +8,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        className="w-full h-auto opacity-80"
+        className="w-full h-auto opacity-80 animate-hero-fade"
       >
         <source
           src={heroVideo}
@@ -18,8 +18,8 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-b from-[#25282A]/20 via-transparent to-[#25282A]" />
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <p className="text-[#E6F0F0] text-sm tracking-[0.4em] opacity-80" style={{ fontFamily: "'Gambetta', serif", fontWeight: 300, fontStyle: 'italic' }}>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-hero-tagline w-full px-4 flex justify-center">
+        <p className="text-[#E6F0F0] text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.4em] opacity-80 whitespace-nowrap" style={{ fontFamily: "'Gambetta', serif", fontWeight: 300, fontStyle: 'italic' }}>
           a self-expression journey
         </p>
       </div>

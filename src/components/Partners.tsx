@@ -33,7 +33,7 @@ export default function Partners() {
     if (!el) return;
     const card = el.querySelector('.partner-card') as HTMLElement;
     if (!card) return;
-    const cardWidth = card.offsetWidth + 32; // gap-8 = 32px
+    const cardWidth = card.offsetWidth + 32;
     el.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
     setCurrentIndex(idx);
   };
@@ -42,14 +42,14 @@ export default function Partners() {
     <section
       ref={sectionRef}
       id="partners"
-      className="min-h-screen bg-[#1a1c1d] py-24 md:py-32 overflow-hidden"
+      className="min-h-screen bg-[#1a1c1d] py-16 md:py-32 overflow-hidden"
     >
       {/* Title */}
       <div
-        className={`px-8 md:px-16 mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+        className={`px-5 sm:px-8 md:px-16 mb-10 md:mb-16 max-w-7xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       >
         <h2
-          className="text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light leading-tight"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light leading-tight"
           style={{ fontFamily: "'Gambarino', serif" }}
         >
           Partners<br />& Associates
@@ -59,48 +59,20 @@ export default function Partners() {
       {/* Carousel Track */}
       <div
         ref={scrollRef}
-        className={`flex gap-8 px-8 md:px-16 overflow-x-auto scrollbar-hide transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+        className={`flex gap-8 px-5 sm:px-8 md:px-16 overflow-x-auto scrollbar-hide justify-center transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
         style={{ scrollSnapType: 'x mandatory' }}
       >
         {partners.map((partner, idx) => (
           <div
             key={idx}
-            className="partner-card flex-shrink-0 flex gap-0 rounded-sm overflow-hidden"
-            style={{
-              width: 'min(85vw, 1000px)',
-              scrollSnapAlign: 'start',
-              minHeight: '520px',
-            }}
+            className="partner-card flex-shrink-0 flex flex-col md:flex-row gap-0 rounded-sm overflow-hidden"
+            style={{ width: 'min(92vw, 1000px)', scrollSnapAlign: 'start' }}
           >
-            {/* Left: Text Content */}
-            <div className="flex flex-col justify-center px-10 py-12 bg-[#1a1c1d]" style={{ flex: '0 0 45%' }}>
-              <h3
-                className="text-lg md:text-xl text-[#E6F0F0] font-bold tracking-wider uppercase mb-4"
-                style={{ fontFamily: "'Gambetta', serif" }}
-              >
-                {partner.name}
-              </h3>
-              <p
-                className="text-[#E6F0F0]/70 text-base md:text-lg mb-8 leading-snug"
-                style={{ fontFamily: "'Gambetta', serif", fontStyle: 'italic', whiteSpace: 'pre-line' }}
-              >
-                {partner.role}
-              </p>
-              <div className="space-y-4">
-                {partner.bio.map((para, pIdx) => (
-                  <p
-                    key={pIdx}
-                    className="text-[#E6F0F0]/65 text-sm leading-relaxed"
-                    style={{ fontFamily: "'Gambetta', serif", fontWeight: 300, textAlign: 'justify' }}
-                  >
-                    {para}
-                  </p>
-                ))}
-              </div>
-            </div>
-
-            {/* Right: Portrait Photo */}
-            <div className="flex-1 overflow-hidden" style={{ minHeight: '520px' }}>
+            {/* Portrait Photo — full width on mobile (order 1), right column on desktop (order 2) */}
+            <div
+              className={`w-full md:flex-1 overflow-hidden order-1 md:order-2 transition-all duration-1000 delay-[400ms] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.03]'}`}
+              style={{ height: 'clamp(220px, 58vw, 380px)' }}
+            >
               <img
                 src={partner.image}
                 alt={partner.name}
@@ -108,11 +80,37 @@ export default function Partners() {
                 className="w-full h-full object-cover object-top"
               />
             </div>
+
+            {/* Text Content — below image on mobile (order 2), left column on desktop (order 1) */}
+            <div
+              className="flex flex-col justify-center px-6 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 bg-[#1a1c1d] order-2 md:order-1 md:w-[45%] md:flex-none"
+            >
+              <h3
+                className={`text-base sm:text-lg md:text-xl text-[#E6F0F0] font-bold tracking-wider uppercase mb-3 md:mb-4 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ fontFamily: "'Gambetta', serif" }}
+              >
+                {partner.name}
+              </h3>
+              <p
+                className={`text-[#E6F0F0]/70 text-sm md:text-base lg:text-lg mb-5 md:mb-8 leading-snug transition-all duration-700 delay-[450ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ fontFamily: "'Gambetta', serif", fontStyle: 'italic', whiteSpace: 'pre-line' }}
+              >
+                {partner.role}
+              </p>
+              <div className="space-y-3 md:space-y-4">
+                {partner.bio.map((para, pIdx) => (
+                  <p
+                    key={pIdx}
+                    className={`text-[#E6F0F0]/65 text-sm leading-relaxed transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                    style={{ fontFamily: "'Gambetta', serif", fontWeight: 300, textAlign: 'justify', transitionDelay: `${600 + pIdx * 100}ms` }}
+                  >
+                    {para}
+                  </p>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
-
-        {/* Spacer so last card doesn't touch edge */}
-        <div className="flex-shrink-0 w-8 md:w-16" />
       </div>
 
       {/* Dots (only if multiple partners) */}

@@ -36,22 +36,22 @@ export default function About() {
 
       {/* Content */}
       <div
-        className={`relative z-10 w-full max-w-6xl mx-auto px-8 py-12 md:py-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+        className={`relative z-10 w-full max-w-6xl mx-auto px-5 sm:px-8 py-10 md:py-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
           }`}
       >
         {/* ─── Pattern + "About Us" Title ─── */}
-        <div className="flex flex-col items-center mb-12 md:mb-20">
+        <div className="flex flex-col items-center mb-8 md:mb-20">
           <div className="relative flex items-center justify-center w-full max-w-4xl">
             {/* Typography Pattern */}
             <img
               src={aboutPattern}
               alt="About us typography pattern"
               loading="lazy"
-              className="w-full h-auto max-h-[550px] object-contain"
+              className="w-full h-auto max-h-[280px] sm:max-h-[400px] md:max-h-[550px] object-contain"
             />
             {/* "About Us" title overlaid on center of pattern */}
             <h2
-              className="absolute text-center text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light tracking-wider"
+              className="absolute text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light tracking-wider"
               style={{ fontFamily: "'Gambarino', serif" }}
             >
               About Us
@@ -60,9 +60,11 @@ export default function About() {
         </div>
 
         {/* ─── Bottom: Two-column paragraphs ─── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6 md:gap-y-8 max-w-5xl mx-auto">
           {/* Left Column */}
-          <div className="flex flex-col gap-6">
+          <div
+            className={`flex flex-col gap-6 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          >
             <p
               className="text-[#E6F0F0]/90 text-sm md:text-base leading-relaxed text-justify"
               style={{ fontFamily: "'Gambetta', serif", fontWeight: 300 }}
@@ -90,7 +92,9 @@ export default function About() {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col gap-6">
+          <div
+            className={`flex flex-col gap-6 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          >
             <p
               className="text-[#E6F0F0]/90 text-sm md:text-base leading-relaxed text-justify"
               style={{ fontFamily: "'Gambetta', serif", fontWeight: 400 }}

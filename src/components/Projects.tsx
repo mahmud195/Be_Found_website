@@ -203,17 +203,17 @@ export default function Projects() {
       >
         {/* Header */}
         <div
-          className={`max-w-6xl mx-auto px-8 mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+          className={`max-w-6xl mx-auto px-5 sm:px-8 mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
             }`}
         >
           <h2
-            className="text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light mb-4 md:mb-6"
             style={{ fontFamily: "'Gambarino', serif" }}
           >
             Projects
           </h2>
           <p
-            className="text-[#E6F0F0] text-base font-semibold mb-3 max-w-3xl"
+            className="text-[#E6F0F0] text-sm sm:text-base font-semibold mb-3 max-w-3xl"
             style={{ fontFamily: "'Gambetta', serif" }}
           >
             Explore a curated selection of environments crafted by BeFound.
@@ -284,12 +284,13 @@ export default function Projects() {
                     transform: `translateX(calc(${translateX}% + ${dragOffset}px)) scale(${cardScale})`,
                     opacity: opacity,
                     zIndex: zIndex,
-                    visibility: Math.abs(offset) <= 2 ? 'visible' : 'hidden', // Optimize paint
-                    cursor: Math.abs(offset) === 1 ? 'pointer' : 'default'
+                    visibility: Math.abs(offset) <= 2 ? 'visible' : 'hidden',
+                    cursor: Math.abs(offset) <= 1 ? 'pointer' : 'default'
                   }}
                   onClick={() => {
                     if (isLeft) prevSlide();
                     if (isRight) nextSlide();
+                    if (isCenter && Math.abs(dragOffset) < 5) setSelectedProject(project);
                   }}
                 >
                   <div className={`relative aspect-[3/2] overflow-hidden rounded-sm group ${isCenter ? 'shadow-2xl' : ''}`}>
@@ -306,18 +307,18 @@ export default function Projects() {
                     />
 
                     {/* Content overlay */}
-                    <div 
-                      className={`absolute bottom-6 left-6 right-6 transition-opacity duration-700 ${isCenter ? 'opacity-100' : 'opacity-0'}`}
+                    <div
+                      className={`absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 transition-opacity duration-700 ${isCenter ? 'opacity-100' : 'opacity-0'}`}
                       style={{ pointerEvents: isCenter ? 'auto' : 'none' }}
                     >
                       <h3
-                        className="text-xl md:text-2xl text-white font-light mb-2"
+                        className="text-lg sm:text-xl md:text-2xl text-white font-light mb-1 sm:mb-2"
                         style={{ fontFamily: "'Gambarino', serif" }}
                       >
                         {project.title}
                       </h3>
                       <p
-                        className="text-white/80 text-xs md:text-sm leading-relaxed mb-3 max-w-lg"
+                        className="hidden sm:block text-white/80 text-xs md:text-sm leading-relaxed mb-3 max-w-lg"
                         style={{ fontFamily: "'Gambetta', serif", fontWeight: 300 }}
                       >
                         {project.description}
@@ -329,7 +330,7 @@ export default function Projects() {
                             setSelectedProject(project);
                           }
                         }}
-                        className="text-white text-xs tracking-widest uppercase underline underline-offset-4 hover:text-white/70 transition-colors pointer-events-auto"
+                        className="inline-flex items-center min-h-[44px] text-white text-xs tracking-widest uppercase underline underline-offset-4 hover:text-white/70 transition-colors pointer-events-auto py-2"
                         style={{ fontFamily: "'Gambetta', serif" }}
                       >
                         Read More...
@@ -389,26 +390,26 @@ export default function Projects() {
 
       {/* Fullscreen Project Modal (Instagram style scroll) */}
       {selectedProject && (
-        <div className="fixed inset-0 z-[100] bg-[#1a1c1d] flex flex-col pt-24 md:pt-32">
+        <div className="fixed inset-0 z-[100] bg-[#1a1c1d] flex flex-col pt-16 md:pt-32">
           <button
             onClick={() => setSelectedProject(null)}
-            className="absolute top-6 right-6 z-50 p-2 bg-black/50 text-white rounded-full hover:bg-white hover:text-black transition-colors"
+            className="absolute top-4 right-4 md:top-6 md:right-6 z-50 w-11 h-11 flex items-center justify-center bg-black/50 text-white rounded-full hover:bg-white hover:text-black transition-colors"
           >
-            <X size={24} />
+            <X size={22} />
           </button>
 
-          <div className="flex-1 overflow-y-auto px-4 pb-20 scrollbar-hide">
+          <div className="flex-1 overflow-y-auto px-4 sm:px-6 pb-20 scrollbar-hide">
             <div className="max-w-4xl mx-auto">
               {/* Project Title and Full Description Header */}
-              <div className="mb-16">
+              <div className="mb-10 md:mb-16">
                 <h2
-                  className="text-4xl md:text-5xl text-white font-light drop-shadow-lg mb-6"
+                  className="text-3xl sm:text-4xl md:text-5xl text-white font-light drop-shadow-lg mb-4 md:mb-6"
                   style={{ fontFamily: "'Gambarino', serif" }}
                 >
                   {selectedProject.title}
                 </h2>
-                <div className="w-16 h-[1px] bg-white/30 mb-6"></div>
-                <p 
+                <div className="w-12 md:w-16 h-[1px] bg-white/30 mb-4 md:mb-6"></div>
+                <p
                   className="text-white/80 text-sm md:text-base leading-relaxed max-w-2xl text-justify"
                   style={{ fontFamily: "'Gambetta', serif", fontWeight: 300 }}
                 >
@@ -416,32 +417,32 @@ export default function Projects() {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-12">
-              {selectedProject.gallery.map((img, idx) => (
-                <div key={idx} className="relative group">
-                  <img
-                    src={img}
-                    alt={`${selectedProject.title} ${idx + 1}`}
-                    loading="lazy"
-                    className="w-full h-auto object-contain rounded-sm"
-                  />
-                  <button
-                    onClick={() => {
-                      setFullscreenImage(img);
-                      setScale(1);
-                    }}
-                    className="absolute bottom-4 right-4 p-3 bg-black/60 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
-                    title="Fullscreen Zoom"
-                  >
-                    <Maximize2 size={20} />
-                  </button>
-                </div>
-              ))}
+              <div className="flex flex-col gap-8 md:gap-12">
+                {selectedProject.gallery.map((img, idx) => (
+                  <div key={idx} className="relative group">
+                    <img
+                      src={img}
+                      alt={`${selectedProject.title} ${idx + 1}`}
+                      loading="lazy"
+                      className="w-full h-auto object-contain rounded-sm"
+                    />
+                    <button
+                      onClick={() => {
+                        setFullscreenImage(img);
+                        setScale(1);
+                      }}
+                      className="absolute bottom-3 right-3 md:bottom-4 md:right-4 w-11 h-11 flex items-center justify-center bg-black/60 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/80"
+                      title="Fullscreen Zoom"
+                    >
+                      <Maximize2 size={18} />
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    )}
+      )}
 
       {/* Deep Zoom Modal */}
       {fullscreenImage && (
