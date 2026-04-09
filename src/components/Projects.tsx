@@ -398,7 +398,7 @@ export default function Projects() {
             <X size={22} />
           </button>
 
-          <div className="flex-1 overflow-y-auto px-4 sm:px-6 pb-20 scrollbar-hide">
+          <div className="flex-1 overflow-y-auto px-4 sm:px-6 pb-20 hide-scrollbar">
             <div className="max-w-4xl mx-auto">
               {/* Project Title and Full Description Header */}
               <div className="mb-10 md:mb-16">

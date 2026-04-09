@@ -59,7 +59,7 @@ export default function Partners() {
       {/* Carousel Track */}
       <div
         ref={scrollRef}
-        className={`flex gap-8 px-5 sm:px-8 md:px-16 overflow-x-auto scrollbar-hide justify-center transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+        className={`flex gap-8 px-5 sm:px-8 md:px-16 overflow-x-auto hide-scrollbar justify-center transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
         style={{ scrollSnapType: 'x mandatory' }}
       >
         {partners.map((partner, idx) => (
