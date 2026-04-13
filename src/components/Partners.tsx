@@ -68,7 +68,8 @@ export default function Partners() {
 
             {/* Text Content — below image on mobile (order 2), left column on desktop (order 1) */}
             <div
-              className="flex flex-col justify-center px-6 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 bg-[#1a1c1d] order-2 md:order-1 md:w-[60%] md:flex-none"
+              className="flex flex-col justify-start px-6 py-8 sm:px-8 sm:py-10 md:px-12 md:py-8 bg-[#1a1c1d] order-2 md:order-1 md:w-[60%] md:flex-none"
+              style={{ height: 'clamp(220px, 50vw, 450px)' }}
             >
               <h3
                 className={`text-base sm:text-lg md:text-xl text-[#E6F0F0] font-bold tracking-wider uppercase mb-3 md:mb-4 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
