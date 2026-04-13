@@ -50,41 +50,6 @@ import villa47_2 from '../assets/BeFound Company Profile With Linked Pictures/Li
 
 const projects = [
   {
-    title: 'Abdelkreim Apartment',
-    description: 'A luxurious residential interior focused on warm tones and distinct atmospheres.',
-    fullDescription: 'Located in the heart of the city, this luxurious apartment merges modern aesthetic sensibilities with timeless comforts. Warm tones wrap the interior, creating an inviting atmosphere that celebrates light and shadow. Every element has been meticulously placed to ensure functional elegance while offering a quiet sanctuary from the bustling world outside.',
-    image: abdelkreimMain,
-    gallery: [abdelkreimMain, abdelkreim1, abdelkreim2]
-  },
-  {
-    title: 'Hamoud Building',
-    description: 'An architectural exploration merging function and profound aesthetics.',
-    fullDescription: 'An exploration of architectural grandeur and sculptural form. The Hamoud Building stands as a testament to structural poetry, where the interaction of concrete and glass redefines the skyline. The interior layouts prioritize natural light, offering expansive views and fostering a deeply inspirational environment for all who enter.',
-    image: hamoudMain,
-    gallery: [hamoudMain, hamoud1, hamoud2, hamoud3, hamoud4]
-  },
-  {
-    title: 'Hotel',
-    description: 'Creating harmonious sanctuaries where individuality is celebrated in hospitality.',
-    fullDescription: 'A hospitality experience designed around the concept of a harmonious sanctuary. This hotel project seamlessly blends opulent luxury with intimate, quiet corners that invite guests to pause and breathe. The materials and textures are carefully curated to celebrate both individuality and a shared sense of arrival.',
-    image: hotelMain,
-    gallery: [hotelMain, hotel1, hotel2, hotel3, hotel4]
-  },
-  {
-    title: 'Offices',
-    description: 'Workspace environments designed to inspire creativity and peace of mind.',
-    fullDescription: 'Rethinking the modern workspace, this gallery-style office environment prioritizes creativity, collaboration, and peace of mind. By integrating elements of nature and utilizing a serene color palette, the design minimizes cognitive noise and encourages deep focus and profound inspiration.',
-    image: officesMain,
-    gallery: [officesMain, offices1, offices2]
-  },
-  {
-    title: 'Restaurant',
-    description: 'A culinary space crafted as a narrative canvas of flavors and design.',
-    fullDescription: 'A culinary journey crafted as a rich narrative canvas. The interior of this restaurant balances dynamic energy with refined dining intimacy. Bespoke lighting fixtures and carefully sourced materials create an ambiance that elevates every flavor, turning a simple meal into an evocative, unforgettable event.',
-    image: restaurantMain,
-    gallery: [restaurantMain, restaurant1, restaurant2, restaurant3, restaurant4]
-  },
-  {
     title: 'Villa 1',
     description: 'A private residential villa blending modern elegance with lasting comfort.',
     fullDescription: 'A private residential haven that champions modern elegance alongside lasting comfort. This villa features expansive, flowing spaces that blur the boundaries between indoor tranquility and outdoor beauty. The quiet design language allows the inhabitants\' personal stories to take center stage.',
@@ -99,11 +64,39 @@ const projects = [
     gallery: [villa2Main, villa2_1, villa2_2]
   },
   {
-    title: 'Villa 47',
+    title: 'Villa 3',
     description: 'At the intersection of human aspiration and artistic exploration.',
-    fullDescription: 'At the true intersection of human aspiration and artistic exploration. Villa 47 is an architectural marvel that pushes the boundaries of contemporary living. It features ambitious structural elements and a fluid interior layout, designed not just as a home, but as a living piece of art.',
+    fullDescription: 'At the true intersection of human aspiration and artistic exploration. This villa is an architectural marvel that pushes the boundaries of contemporary living. It features ambitious structural elements and a fluid interior layout, designed not just as a home, but as a living piece of art.',
     image: villa47Main,
     gallery: [villa47Main, villa47_1, villa47_2]
+  },
+  {
+    title: 'Apartment 1',
+    description: 'A luxurious residential interior focused on warm tones and distinct atmospheres.',
+    fullDescription: 'Located in the heart of the city, this luxurious apartment merges modern aesthetic sensibilities with timeless comforts. Warm tones wrap the interior, creating an inviting atmosphere that celebrates light and shadow. Every element has been meticulously placed to ensure functional elegance while offering a quiet sanctuary from the bustling world outside.',
+    image: abdelkreimMain,
+    gallery: [abdelkreimMain, abdelkreim1, abdelkreim2]
+  },
+  {
+    title: 'hotel 1',
+    description: 'Creating harmonious sanctuaries where individuality is celebrated in hospitality.',
+    fullDescription: 'A hospitality experience designed around the concept of a harmonious sanctuary. This hotel project seamlessly blends opulent luxury with intimate, quiet corners that invite guests to pause and breathe. The materials and textures are carefully curated to celebrate both individuality and a shared sense of arrival.',
+    image: hotelMain,
+    gallery: [hotelMain, hotel1, hotel2, hotel3, hotel4]
+  },
+  {
+    title: 'Office 1',
+    description: 'Workspace environments designed to inspire creativity and peace of mind.',
+    fullDescription: 'Rethinking the modern workspace, this gallery-style office environment prioritizes creativity, collaboration, and peace of mind. By integrating elements of nature and utilizing a serene color palette, the design minimizes cognitive noise and encourages deep focus and profound inspiration.',
+    image: officesMain,
+    gallery: [officesMain, offices1, offices2]
+  },
+  {
+    title: 'Restaurant 1',
+    description: 'A culinary space crafted as a narrative canvas of flavors and design.',
+    fullDescription: 'A culinary journey crafted as a rich narrative canvas. The interior of this restaurant balances dynamic energy with refined dining intimacy. Bespoke lighting fixtures and carefully sourced materials create an ambiance that elevates every flavor, turning a simple meal into an evocative, unforgettable event.',
+    image: restaurantMain,
+    gallery: [restaurantMain, restaurant1, restaurant2, restaurant3, restaurant4]
   }
 ];
 
