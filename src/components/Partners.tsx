@@ -15,9 +15,7 @@ const partners = [
 
 export default function Partners() {
   const sectionRef = useRef<HTMLElement>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,16 +26,6 @@ export default function Partners() {
     return () => observer.disconnect();
   }, []);
 
-  const goTo = (idx: number) => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const card = el.querySelector('.partner-card') as HTMLElement;
-    if (!card) return;
-    const cardWidth = card.offsetWidth + 32;
-    el.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
-    setCurrentIndex(idx);
-  };
-
   return (
     <section
       ref={sectionRef}
@@ -46,32 +34,29 @@ export default function Partners() {
     >
       {/* Title */}
       <div
-        className={`px-5 sm:px-8 md:px-16 mb-10 md:mb-16 max-w-7xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+        className={`px-5 sm:px-8 md:px-16 mb-10 md:mb-16 max-w-7xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       >
         <h2
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light leading-tight"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light"
           style={{ fontFamily: "'Gambarino', serif" }}
         >
-          Partners<br />& Associates
+          Partners & Associates
         </h2>
       </div>
 
-      {/* Carousel Track */}
+      {/* Partners Container */}
       <div
-        ref={scrollRef}
-        className={`flex gap-8 px-5 sm:px-8 md:px-16 overflow-x-auto hide-scrollbar justify-center transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
-        style={{ scrollSnapType: 'x mandatory' }}
+        className={`flex justify-center px-5 sm:px-8 md:px-16 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       >
         {partners.map((partner, idx) => (
           <div
             key={idx}
-            className="partner-card flex-shrink-0 flex flex-col md:flex-row gap-0 rounded-sm overflow-hidden"
-            style={{ width: 'min(92vw, 1000px)', scrollSnapAlign: 'start' }}
+            className="partner-card flex flex-col md:flex-row gap-0 rounded-sm overflow-hidden max-w-5xl"
           >
             {/* Portrait Photo — full width on mobile (order 1), right column on desktop (order 2) */}
             <div
-              className={`w-full md:flex-1 overflow-hidden order-1 md:order-2 transition-all duration-1000 delay-[400ms] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.03]'}`}
-              style={{ height: 'clamp(220px, 58vw, 380px)' }}
+              className={`w-full md:w-[40%] overflow-hidden order-1 md:order-2 transition-all duration-1000 delay-[400ms] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.03]'}`}
+              style={{ height: 'clamp(220px, 50vw, 450px)' }}
             >
               <img
                 src={partner.image}
@@ -83,7 +68,7 @@ export default function Partners() {
 
             {/* Text Content — below image on mobile (order 2), left column on desktop (order 1) */}
             <div
-              className="flex flex-col justify-center px-6 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 bg-[#1a1c1d] order-2 md:order-1 md:w-[45%] md:flex-none"
+              className="flex flex-col justify-center px-6 py-8 sm:px-8 sm:py-10 md:px-12 md:py-12 bg-[#1a1c1d] order-2 md:order-1 md:w-[60%] md:flex-none"
             >
               <h3
                 className={`text-base sm:text-lg md:text-xl text-[#E6F0F0] font-bold tracking-wider uppercase mb-3 md:mb-4 transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
@@ -112,19 +97,6 @@ export default function Partners() {
           </div>
         ))}
       </div>
-
-      {/* Dots (only if multiple partners) */}
-      {partners.length > 1 && (
-        <div className="flex justify-center mt-10 gap-2 px-8">
-          {partners.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => goTo(idx)}
-              className={`h-2 rounded-full transition-all duration-500 ${idx === currentIndex ? 'w-6 bg-[#E6F0F0]' : 'w-2 bg-[#E6F0F0]/30'}`}
-            />
-          ))}
-        </div>
-      )}
     </section>
   );
 }
