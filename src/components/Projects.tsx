@@ -51,6 +51,7 @@ import villa47_2 from '../assets/BeFound Company Profile With Linked Pictures/Li
 const projects = [
   {
     title: 'Villa 1',
+    location: 'Riyadh',
     description: 'A private residential villa blending modern elegance with lasting comfort.',
     fullDescription: 'A private residential haven that champions modern elegance alongside lasting comfort. This villa features expansive, flowing spaces that blur the boundaries between indoor tranquility and outdoor beauty. The quiet design language allows the inhabitants\' personal stories to take center stage.',
     image: villa1Main,
@@ -58,6 +59,7 @@ const projects = [
   },
   {
     title: 'Villa 2',
+    location: 'Riyadh',
     description: 'Sleek architectural lines forming a quiet environment for family life.',
     fullDescription: 'Sleek architectural lines define this family residence, forming a quiet and sophisticated environment for daily life. The design philosophy centers on stripping away the unnecessary, leaving behind pure spaces that breathe, inspire, and offer true solace to its residents.',
     image: villa2Main,
@@ -65,13 +67,14 @@ const projects = [
   },
   {
     title: 'Villa 3',
-    description: 'At the intersection of human aspiration and artistic exploration.',
-    fullDescription: 'At the true intersection of human aspiration and artistic exploration. This villa is an architectural marvel that pushes the boundaries of contemporary living. It features ambitious structural elements and a fluid interior layout, designed not just as a home, but as a living piece of art.',
+    description: 'A private residential building merging contemporary design with refined living spaces.',
+    fullDescription: 'This private residential building exemplifies the harmonious integration of modern design principles with timeless architectural excellence. The space features ambitious structural elements and a thoughtfully planned interior layout, creating environments that celebrate both functional elegance and aesthetic sophistication.',
     image: villa47Main,
     gallery: [villa47Main, villa47_1, villa47_2]
   },
   {
     title: 'Apartment 1',
+    location: 'Jeddah',
     description: 'A luxurious residential interior focused on warm tones and distinct atmospheres.',
     fullDescription: 'Located in the heart of the city, this luxurious apartment merges modern aesthetic sensibilities with timeless comforts. Warm tones wrap the interior, creating an inviting atmosphere that celebrates light and shadow. Every element has been meticulously placed to ensure functional elegance while offering a quiet sanctuary from the bustling world outside.',
     image: abdelkreimMain,
@@ -305,11 +308,19 @@ export default function Projects() {
                       style={{ pointerEvents: isCenter ? 'auto' : 'none' }}
                     >
                       <h3
-                        className="text-lg sm:text-xl md:text-2xl text-white font-light mb-1 sm:mb-2"
+                        className="text-lg sm:text-xl md:text-2xl text-white font-light mb-0 sm:mb-1"
                         style={{ fontFamily: "'Gambarino', serif" }}
                       >
                         {project.title}
                       </h3>
+                      {project.location && (
+                        <p
+                          className="text-white/60 text-xs md:text-sm font-light mb-2 sm:mb-3"
+                          style={{ fontFamily: "'Gambetta', serif", fontWeight: 200 }}
+                        >
+                          {project.location}
+                        </p>
+                      )}
                       <p
                         className="hidden sm:block text-white/80 text-xs md:text-sm leading-relaxed mb-3 max-w-lg"
                         style={{ fontFamily: "'Gambetta', serif", fontWeight: 300 }}
@@ -396,11 +407,19 @@ export default function Projects() {
               {/* Project Title and Full Description Header */}
               <div className="mb-10 md:mb-16">
                 <h2
-                  className="text-3xl sm:text-4xl md:text-5xl text-white font-light drop-shadow-lg mb-4 md:mb-6"
+                  className="text-3xl sm:text-4xl md:text-5xl text-white font-light drop-shadow-lg mb-1 md:mb-2"
                   style={{ fontFamily: "'Gambarino', serif" }}
                 >
                   {selectedProject.title}
                 </h2>
+                {selectedProject.location && (
+                  <p
+                    className="text-white/50 text-sm md:text-base font-light mb-4 md:mb-6"
+                    style={{ fontFamily: "'Gambetta', serif", fontWeight: 200 }}
+                  >
+                    {selectedProject.location}
+                  </p>
+                )}
                 <div className="w-12 md:w-16 h-[1px] bg-white/30 mb-4 md:mb-6"></div>
                 <p
                   className="text-white/80 text-sm md:text-base leading-relaxed max-w-2xl text-justify"
