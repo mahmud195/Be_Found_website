@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import aboutBg from '../assets/images/Main shot.jpg';
-import aboutPattern from '../assets/images/About us/Typography_Pattern_03_-_BF_White.jpg';
+import aboutPattern from '../assets/images/About us/Typography_Pattern_03_-_BF_White.png';
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);

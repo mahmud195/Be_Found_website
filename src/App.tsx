@@ -7,10 +7,10 @@ import Services from './components/Services';
 import Partners from './components/Partners';
 import Contact from './components/Contact';
 
-import logoBlack from './assets/logos/Primary_Logo_BF_Black.jpg';
-import logoArabicBlack from './assets/logos/Arabic_Logo_BF_Black.jpg';
-import aocIcon from './assets/logos/AOC Icon White - Copy.jpg';
-import aocLogo from './assets/logos/AOC Logo White - Copy.jpg';
+import logoBlack from './assets/logos/Primary_Logo_BF_Black.png';
+import logoArabicBlack from './assets/logos/Arabic_Logo_BF_Black.png';
+import aocIcon from './assets/logos/AOC Icon White - Copy.png';
+import aocLogo from './assets/logos/AOC Logo White - Copy.png';
 
 function App() {
   const footerRef = useRef<HTMLElement>(null);
