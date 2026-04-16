@@ -67,6 +67,7 @@ const projects = [
   },
   {
     title: 'Villa 3',
+    location: 'CFC - Egypt',
     description: 'A private residential building merging contemporary design with refined living spaces.',
     fullDescription: 'This private residential building exemplifies the harmonious integration of modern design principles with timeless architectural excellence. The space features ambitious structural elements and a thoughtfully planned interior layout, creating environments that celebrate both functional elegance and aesthetic sophistication.',
     image: villa47Main,
@@ -82,6 +83,7 @@ const projects = [
   },
   {
     title: 'hotel 1',
+    location: 'Jeddah',
     description: 'Creating harmonious sanctuaries where individuality is celebrated in hospitality.',
     fullDescription: 'A hospitality experience designed around the concept of a harmonious sanctuary. This hotel project seamlessly blends opulent luxury with intimate, quiet corners that invite guests to pause and breathe. The materials and textures are carefully curated to celebrate both individuality and a shared sense of arrival.',
     image: hotelMain,
@@ -89,6 +91,7 @@ const projects = [
   },
   {
     title: 'Office 1',
+    location: 'Riyadh',
     description: 'Workspace environments designed to inspire creativity and peace of mind.',
     fullDescription: 'Rethinking the modern workspace, this gallery-style office environment prioritizes creativity, collaboration, and peace of mind. By integrating elements of nature and utilizing a serene color palette, the design minimizes cognitive noise and encourages deep focus and profound inspiration.',
     image: officesMain,
@@ -96,6 +99,7 @@ const projects = [
   },
   {
     title: 'Restaurant 1',
+    location: 'Jeddah',
     description: 'A culinary space crafted as a narrative canvas of flavors and design.',
     fullDescription: 'A culinary journey crafted as a rich narrative canvas. The interior of this restaurant balances dynamic energy with refined dining intimacy. Bespoke lighting fixtures and carefully sourced materials create an ambiance that elevates every flavor, turning a simple meal into an evocative, unforgettable event.',
     image: restaurantMain,
