@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logos/Primary_Logo_BF_White.png';
+import logo from '../assets/logos/Primary_Logo_BF_White.jpg';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
