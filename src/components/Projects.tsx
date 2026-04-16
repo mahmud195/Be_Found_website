@@ -2,50 +2,50 @@ import { useEffect, useRef, useState } from 'react';
 import { Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Abdelkreim Apartment
-import abdelkreimMain from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Abdelkreim Apartment/Main shot.jpg';
-import abdelkreim1 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Abdelkreim Apartment/019_Post night .jpg';
-import abdelkreim2 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Abdelkreim Apartment/020_Post night0.jpg';
+import abdelkreimMain from '../assets/projects/abdelkreim/main.jpg';
+import abdelkreim1 from '../assets/projects/abdelkreim/01.jpg';
+import abdelkreim2 from '../assets/projects/abdelkreim/02.jpg';
 
 // Hamoud Building
-import hamoudMain from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Hamoud Building/Main shot.jpg';
-import hamoud1 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Hamoud Building/02_Post.jpg';
-import hamoud2 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Hamoud Building/1_View04.jpg';
-import hamoud3 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Hamoud Building/1_View08.jpg';
-import hamoud4 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Hamoud Building/6.jpg';
+import hamoudMain from '../assets/projects/hamoud/main.jpg';
+import hamoud1 from '../assets/projects/hamoud/01.jpg';
+import hamoud2 from '../assets/projects/hamoud/02.jpg';
+import hamoud3 from '../assets/projects/hamoud/03.jpg';
+import hamoud4 from '../assets/projects/hamoud/04.jpg';
 
 // Hotel
-import hotelMain from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Hotel/Main shot.jpg';
-import hotel1 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Hotel/005_Post.png';
-import hotel2 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Hotel/3.jpg';
-import hotel3 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Hotel/4.jpg';
-import hotel4 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Hotel/8.jpg';
+import hotelMain from '../assets/projects/hotel/main.jpg';
+import hotel1 from '../assets/projects/hotel/01.jpg';
+import hotel2 from '../assets/projects/hotel/02.jpg';
+import hotel3 from '../assets/projects/hotel/03.jpg';
+import hotel4 from '../assets/projects/hotel/04.jpg';
 
 // Offices
-import officesMain from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Offices/Main shot.jpg';
-import offices1 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Offices/20_Post.jpg';
-import offices2 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Offices/26_Post.jpg';
+import officesMain from '../assets/projects/offices/main.jpg';
+import offices1 from '../assets/projects/offices/01.jpg';
+import offices2 from '../assets/projects/offices/02.jpg';
 
 // Restaurant
-import restaurantMain from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Restaurant/Main shot.jpg';
-import restaurant1 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Restaurant/14.jpg';
-import restaurant2 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Restaurant/15.jpg';
-import restaurant3 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Restaurant/20_Post_1.jpg';
-import restaurant4 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Restaurant/30_Post.jpg';
+import restaurantMain from '../assets/projects/restaurant/main.jpg';
+import restaurant1 from '../assets/projects/restaurant/01.jpg';
+import restaurant2 from '../assets/projects/restaurant/02.jpg';
+import restaurant3 from '../assets/projects/restaurant/03.jpg';
+import restaurant4 from '../assets/projects/restaurant/04.jpg';
 
 // Villa1
-import villa1Main from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Villa1/Main shot.jpg';
-import villa1_1 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Villa1/12_Post.jpg';
-import villa1_2 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Villa1/cam 18 _Post.jpg';
+import villa1Main from '../assets/projects/villa1/main.jpg';
+import villa1_1 from '../assets/projects/villa1/01.jpg';
+import villa1_2 from '../assets/projects/villa1/02.jpg';
 
 // Villa2
-import villa2Main from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Villa2/Main shot.jpg';
-import villa2_1 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Villa2/camera-18--.jpg';
-import villa2_2 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Villa2/camera-19.jpg';
+import villa2Main from '../assets/projects/villa2/main.jpg';
+import villa2_1 from '../assets/projects/villa2/01.jpg';
+import villa2_2 from '../assets/projects/villa2/02.jpg';
 
-// Villa47
-import villa47Main from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Villa47/Main shot.jpg';
-import villa47_1 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Villa47/01.jpg';
-import villa47_2 from '../assets/BeFound Company Profile With Linked Pictures/Links/Projects Pictures/Villa47/03.jpg';
+// Villa3
+import villa47Main from '../assets/projects/villa3/main.jpg';
+import villa47_1 from '../assets/projects/villa3/01.jpg';
+import villa47_2 from '../assets/projects/villa3/02.jpg';
 
 
 const projects = [

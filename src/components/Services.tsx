@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
-import serviceImg1 from '../assets/BeFound Company Profile With Linked Pictures/Links/Service Pictures/Architecture/Contemporary Exterior Image.jpg';
-import serviceImg2 from '../assets/BeFound Company Profile With Linked Pictures/Links/Service Pictures/Interior/Living Room with Tree.jpg';
-import serviceImg3 from '../assets/BeFound Company Profile With Linked Pictures/Links/Service Pictures/Landscape/Architecture Design Image (1).jpg';
-import serviceImg4 from '../assets/BeFound Company Profile With Linked Pictures/Links/Service Pictures/FF&E/Modern Living Room Design (1).jpg';
+import serviceImg1 from '../assets/services/architecture.jpg';
+import serviceImg2 from '../assets/services/interior.jpg';
+import serviceImg3 from '../assets/services/landscape.jpg';
+import serviceImg4 from '../assets/services/ffe.jpg';
 
 const services = [
   {

@@ -53,10 +53,10 @@ export default function Contact() {
                 <div>
                   <p className="text-[#E6F0F0] font-light mb-1">Email</p>
                   <a
-                    href="mailto:studio@befound.com"
+                    href="mailto:info@befound.design"
                     className="text-[#E6F0F0]/60 hover:text-[#E6F0F0] transition-colors duration-300"
                   >
-                    studio@befound.com
+                    info@befound.design
                   </a>
                 </div>
               </div>

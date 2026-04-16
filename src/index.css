@@ -54,14 +54,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'TSBurdaPro';
-  src: url('./assets/fonts/TSBurdaPro-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -88,10 +80,6 @@
   h6 {
     font-family: 'Gambarino', serif;
   }
-}
-
-.font-arabic {
-  font-family: 'TSBurdaPro', sans-serif;
 }
 
 /* ─── Services carousel ─── */
