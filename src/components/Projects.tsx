@@ -6,13 +6,6 @@ import abdelkreimMain from '../assets/projects/abdelkreim/main.jpg';
 import abdelkreim1 from '../assets/projects/abdelkreim/01.jpg';
 import abdelkreim2 from '../assets/projects/abdelkreim/02.jpg';
 
-// Hamoud Building
-import hamoudMain from '../assets/projects/hamoud/main.jpg';
-import hamoud1 from '../assets/projects/hamoud/01.jpg';
-import hamoud2 from '../assets/projects/hamoud/02.jpg';
-import hamoud3 from '../assets/projects/hamoud/03.jpg';
-import hamoud4 from '../assets/projects/hamoud/04.jpg';
-
 // Hotel
 import hotelMain from '../assets/projects/hotel/main.jpg';
 import hotel1 from '../assets/projects/hotel/01.jpg';
