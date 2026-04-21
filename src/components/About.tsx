@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import aboutBg from '../assets/images/Main shot.jpg';
-import aboutPattern from '../assets/images/About us/Typography_Pattern_03_-_BF_White.jpg';
+import aboutPattern from '../assets/images/About us/Typography_Pattern_03_-_BF_White.png';
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -47,7 +47,7 @@ export default function About() {
               src={aboutPattern}
               alt="About us typography pattern"
               loading="lazy"
-              className="w-full h-auto max-h-[280px] sm:max-h-[400px] md:max-h-[550px] object-contain mix-blend-screen"
+              className="w-full h-auto max-h-[280px] sm:max-h-[400px] md:max-h-[550px] object-contain"
             />
             {/* "About Us" title overlaid on center of pattern */}
             <h2
