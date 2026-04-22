@@ -98,10 +98,15 @@ function App() {
         >
           The Creative Partner Of
         </span>
-        <div className="flex items-center gap-3">
+        <a 
+          href="https://alosaimi.sa.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 transition-opacity hover:opacity-80"
+        >
           <img src={aocIcon} alt="AOC Icon" className="h-5 md:h-6 w-auto object-contain opacity-70" />
           <img src={aocLogo} alt="AOC" className="h-5 md:h-6 w-auto object-contain opacity-70" />
-        </div>
+        </a>
       </div>
     </div>
   );
