@@ -40,6 +40,13 @@ import villa47Main from '../assets/projects/villa3/main.jpg';
 import villa47_1 from '../assets/projects/villa3/01.jpg';
 import villa47_2 from '../assets/projects/villa3/02.jpg';
 
+// Villa4
+import villa4Main from '../assets/projects/Villa 4/main.jpg';
+import villa4_1 from '../assets/projects/Villa 4/01.jpg';
+import villa4_2 from '../assets/projects/Villa 4/02.jpg';
+import villa4_3 from '../assets/projects/Villa 4/03.jpg';
+import villa4_4 from '../assets/projects/Villa 4/04.jpg';
+
 
 const projects = [
   {
@@ -65,6 +72,14 @@ const projects = [
     fullDescription: 'This private residential building exemplifies the harmonious integration of modern design principles with timeless architectural excellence. The space features ambitious structural elements and a thoughtfully planned interior layout, creating environments that celebrate both functional elegance and aesthetic sophistication.',
     image: villa47Main,
     gallery: [villa47Main, villa47_1, villa47_2]
+  },
+  {
+    title: 'Villa 4',
+    location: 'Riyadh',
+    description: 'A contemporary villa where refined materiality meets serene spatial composition.',
+    fullDescription: 'A contemporary residential villa that sets a new benchmark for refined living. Every space has been conceived with intention — from the expansive open-plan living areas to the intimate private retreats. Rich materiality and a restrained palette work in harmony to create an atmosphere of understated luxury, where light, form, and texture tell a quiet, compelling story.',
+    image: villa4Main,
+    gallery: [villa4Main, villa4_1, villa4_2, villa4_3, villa4_4]
   },
   {
     title: 'Apartment 1',
