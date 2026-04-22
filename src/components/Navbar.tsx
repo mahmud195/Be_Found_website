@@ -10,11 +10,15 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+      // When at the very top, always mark Home as active
+      if (window.scrollY < window.innerHeight * 0.4) {
+        setActiveSection('home');
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
 
-    // Scroll-Spy logic
+    // Scroll-Spy: fires when a section enters the top 40% of the viewport
     const sections = ['home', 'about', 'services', 'projects', 'partners', 'contact'];
     const observers = sections.map((section) => {
       const el = document.getElementById(section);
@@ -26,7 +30,7 @@ export default function Navbar() {
             setActiveSection(section);
           }
         },
-        { threshold: 0.5 }
+        { threshold: 0, rootMargin: '0px 0px -55% 0px' }
       );
 
       observer.observe(el);
