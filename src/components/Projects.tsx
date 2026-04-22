@@ -74,7 +74,7 @@ const projects = [
     gallery: [villa47Main, villa47_1, villa47_2]
   },
   {
-    title: 'LUXURY RESIDENTIAL BUILDING 3',
+    title: 'LUXURY RESIDENTIAL BUILDING',
     location: 'Riyadh',
     description: 'A contemporary villa where refined materiality meets serene spatial composition.',
     fullDescription: 'A contemporary residential villa that sets a new benchmark for refined living. Every space has been conceived with intention — from the expansive open-plan living areas to the intimate private retreats. Rich materiality and a restrained palette work in harmony to create an atmosphere of understated luxury, where light, form, and texture tell a quiet, compelling story.',
