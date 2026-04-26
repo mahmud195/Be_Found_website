@@ -2,13 +2,13 @@ import heroVideo from '../assets/videos/BeFound Design Studio Video For Website.
 
 export default function Hero() {
   return (
-    <section id="home" className="relative w-full overflow-hidden bg-[#25282A] h-[65vh] md:h-auto">
+    <section id="home" className="relative w-full overflow-hidden bg-[#25282A]">
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="w-full h-full md:h-auto object-cover opacity-80 animate-hero-fade"
+        className="w-full h-auto opacity-80 animate-hero-fade"
       >
         <source
           src={heroVideo}
