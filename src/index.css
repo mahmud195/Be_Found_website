@@ -86,6 +86,7 @@
 .services-scroll-track {
   overflow-x: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -183,6 +184,7 @@
 .service-slide {
   width: min(80%, 900px);
   height: 480px;
+  scroll-snap-align: center;
 }
 
 @media (max-width: 639px) {

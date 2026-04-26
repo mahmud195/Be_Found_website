@@ -32,6 +32,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 md:gap-20">
           <div>
+            <div className={`w-10 h-px bg-[#E6F0F0]/30 mb-4 md:hidden transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`} />
             <h2
               className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light leading-tight mb-8 md:mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
             >

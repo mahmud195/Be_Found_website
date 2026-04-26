@@ -557,6 +557,7 @@ export default function Projects() {
         <div
           className={`max-w-6xl mx-auto px-5 sm:px-8 mb-8 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
         >
+          <div className="w-10 h-px bg-[#E6F0F0]/30 mb-4 md:hidden" />
           <h2
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light mb-4 md:mb-6"
             style={{ fontFamily: "'Gambarino', serif" }}

@@ -36,6 +36,7 @@ export default function Partners() {
       <div
         className={`px-5 sm:px-8 md:px-16 mb-10 md:mb-16 max-w-7xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
       >
+        <div className="w-10 h-px bg-[#E6F0F0]/30 mx-auto mb-4 md:hidden" />
         <h2
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light"
           style={{ fontFamily: "'Gambarino', serif" }}
