@@ -27,7 +27,7 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="min-h-screen bg-[#25282A] px-5 sm:px-8 py-12 md:py-32 border-t border-[#E6F0F0]/5"
+      className="md:min-h-screen bg-[#25282A] px-5 sm:px-8 py-10 md:py-32 border-t border-[#E6F0F0]/5"
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 md:gap-20">

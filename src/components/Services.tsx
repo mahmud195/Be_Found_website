@@ -126,7 +126,7 @@ export default function Services() {
     <section
         ref={sectionRef}
         id="services"
-        className="min-h-screen bg-[#25282A] px-6 md:px-8 py-14 md:py-32 overflow-hidden"
+        className="md:min-h-screen bg-[#25282A] px-6 md:px-8 py-10 md:py-32 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto">
           {/* Header */}

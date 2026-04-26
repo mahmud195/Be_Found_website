@@ -21,7 +21,7 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative md:min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">

@@ -30,7 +30,7 @@ export default function Partners() {
     <section
       ref={sectionRef}
       id="partners"
-      className="min-h-screen bg-[#1a1c1d] py-16 md:py-32 overflow-hidden"
+      className="md:min-h-screen bg-[#1a1c1d] py-12 md:py-32 overflow-hidden"
     >
       {/* Title */}
       <div

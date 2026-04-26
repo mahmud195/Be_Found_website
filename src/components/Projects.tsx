@@ -551,7 +551,7 @@ export default function Projects() {
       <section
         ref={sectionRef}
         id="projects"
-        className="min-h-screen bg-[#25282A] py-14 md:py-32 overflow-hidden select-none"
+        className="md:min-h-screen bg-[#25282A] py-10 md:py-32 overflow-hidden select-none"
       >
         {/* Header */}
         <div
