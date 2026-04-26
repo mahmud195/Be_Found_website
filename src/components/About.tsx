@@ -5,6 +5,7 @@ import aboutPattern from '../assets/images/About us/Typography_Pattern_03_-_BF_W
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,7 +48,7 @@ export default function About() {
               src={aboutPattern}
               alt="About us typography pattern"
               loading="lazy"
-              className="w-full h-auto max-h-[280px] sm:max-h-[400px] md:max-h-[550px] object-contain"
+              className="w-full h-auto max-h-[180px] sm:max-h-[400px] md:max-h-[550px] object-contain"
             />
             {/* "About Us" title overlaid on center of pattern */}
             <h2
@@ -74,7 +75,7 @@ export default function About() {
             </p>
 
             <p
-              className="text-[#E6F0F0]/90 text-sm md:text-base leading-relaxed text-justify"
+              className={`text-[#E6F0F0]/90 text-sm md:text-base leading-relaxed text-justify ${isExpanded ? 'block' : 'hidden md:block'}`}
               style={{ fontFamily: "'Gambetta', serif", fontWeight: 400 }}
             >
               Our philosophy is rooted in Artistic Intentionality, the idea that
@@ -83,7 +84,7 @@ export default function About() {
             </p>
 
             <p
-              className="text-[#E6F0F0]/90 text-sm md:text-base leading-relaxed text-justify"
+              className={`text-[#E6F0F0]/90 text-sm md:text-base leading-relaxed text-justify ${isExpanded ? 'block' : 'hidden md:block'}`}
               style={{ fontFamily: "'Gambetta', serif", fontWeight: 300 }}
             >
               We reject the "one-size-fits-all" approach, choosing instead to
@@ -93,7 +94,7 @@ export default function About() {
 
           {/* Right Column */}
           <div
-            className={`flex flex-col gap-6 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            className={`flex-col gap-6 transition-all duration-1000 delay-500 md:flex ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${isExpanded ? 'flex' : 'hidden'}`}
           >
             <p
               className="text-[#E6F0F0]/90 text-sm md:text-base leading-relaxed text-justify"
@@ -114,6 +115,17 @@ export default function About() {
               finally feel a true sense of belonging.
             </p>
           </div>
+        </div>
+
+        {/* Read More / Read Less - mobile only */}
+        <div className="flex justify-center mt-6 md:hidden">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="px-6 py-2 border border-[#E6F0F0]/30 text-[#E6F0F0]/80 text-xs tracking-[0.2em] uppercase hover:bg-[#E6F0F0]/10 transition-colors"
+            style={{ fontFamily: "'Gambetta', serif" }}
+          >
+            {isExpanded ? 'Read Less' : 'Read More'}
+          </button>
         </div>
       </div>
     </section>
