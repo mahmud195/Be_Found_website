@@ -165,8 +165,8 @@ export default function Services() {
                   >
                     {/* Vertical Title Strip */}
                     <div
-                      className="relative flex-shrink-0 flex items-center justify-center"
-                      style={{ width: '52px', backgroundColor: '#1a1c1e' }}
+                      className="service-title-strip relative flex-shrink-0 flex items-center justify-center"
+                      style={{ backgroundColor: '#1a1c1e' }}
                     >
                       <span
                         className="whitespace-nowrap text-sm md:text-base font-light tracking-[0.15em] uppercase"

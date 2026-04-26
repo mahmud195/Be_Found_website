@@ -36,11 +36,11 @@ export default function About() {
 
       {/* Content */}
       <div
-        className={`relative z-10 w-full max-w-6xl mx-auto px-5 sm:px-8 py-10 md:py-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+        className={`relative z-10 w-full max-w-6xl mx-auto px-5 sm:px-8 py-8 md:py-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
           }`}
       >
         {/* ─── Pattern + "About Us" Title ─── */}
-        <div className="flex flex-col items-center mb-8 md:mb-20">
+        <div className="flex flex-col items-center mb-5 md:mb-20">
           <div className="relative flex items-center justify-center w-full max-w-4xl">
             {/* Typography Pattern */}
             <img

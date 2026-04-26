@@ -555,7 +555,7 @@ export default function Projects() {
       >
         {/* Header */}
         <div
-          className={`max-w-6xl mx-auto px-5 sm:px-8 mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
+          className={`max-w-6xl mx-auto px-5 sm:px-8 mb-8 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}
         >
           <h2
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#E6F0F0] font-light mb-4 md:mb-6"

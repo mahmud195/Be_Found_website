@@ -188,7 +188,18 @@
 @media (max-width: 639px) {
   .service-slide {
     width: min(90%, 900px);
-    height: 400px;
+    height: 340px;
+  }
+}
+
+/* Service vertical title strip — narrower on mobile */
+.service-title-strip {
+  width: 52px;
+}
+
+@media (max-width: 639px) {
+  .service-title-strip {
+    width: 44px;
   }
 }
 
