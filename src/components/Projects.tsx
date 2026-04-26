@@ -551,7 +551,7 @@ export default function Projects() {
       <section
         ref={sectionRef}
         id="projects"
-        className="min-h-screen bg-[#25282A] py-24 md:py-32 overflow-hidden select-none"
+        className="min-h-screen bg-[#25282A] py-14 md:py-32 overflow-hidden select-none"
       >
         {/* Header */}
         <div
@@ -748,12 +748,11 @@ export default function Projects() {
 
                   {/* Card: image left, text right */}
                   <div
-                    className="rounded-sm overflow-visible mb-10 md:mb-16"
+                    className="rounded-sm overflow-visible mb-10 md:mb-16 p-4 sm:p-8"
                     style={{
                       background: 'rgba(255,255,255,0.06)',
                       border: '1px solid rgba(255,255,255,0.12)',
                       backdropFilter: 'blur(16px)',
-                      padding: '2rem 2rem 2.5rem',
                     }}
                   >
                     <div className="flex flex-col md:flex-row gap-6 md:gap-10">
@@ -765,7 +764,7 @@ export default function Projects() {
                       {/* Text */}
                       <div className="flex-1 flex flex-col justify-center">
                         <h2
-                          className="text-3xl md:text-4xl lg:text-5xl text-white font-light mb-1 md:mb-2 leading-tight"
+                          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-light mb-1 md:mb-2 leading-tight"
                           style={{ fontFamily: "'Gambarino', serif" }}
                         >
                           {project.title}

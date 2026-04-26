@@ -126,16 +126,16 @@ export default function Services() {
     <section
         ref={sectionRef}
         id="services"
-        className="min-h-screen bg-[#25282A] px-6 md:px-8 py-24 md:py-32 overflow-hidden"
+        className="min-h-screen bg-[#25282A] px-6 md:px-8 py-14 md:py-32 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div
-            className={`mb-12 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
+            className={`mb-8 md:mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
               }`}
           >
             <h2
-              className="text-5xl md:text-6xl text-[#E6F0F0] font-light mb-4"
+              className="text-4xl md:text-6xl text-[#E6F0F0] font-light mb-4"
               style={{ fontFamily: "'Gambarino', serif" }}
             >
               Services
@@ -162,7 +162,6 @@ export default function Services() {
                   <div
                     key={`${service.title}-${idx}`}
                     className="service-slide flex-shrink-0 flex rounded-sm overflow-hidden"
-                    style={{ width: 'min(80%, 900px)', height: '480px' }}
                   >
                     {/* Vertical Title Strip */}
                     <div
@@ -197,7 +196,7 @@ export default function Services() {
                       {/* Title overlay (fades out on hover) */}
                       <div className="card-title-overlay">
                         <h3
-                          className="text-3xl md:text-5xl font-light text-center px-8 leading-tight"
+                          className="text-xl sm:text-3xl md:text-5xl font-light text-center px-4 sm:px-6 md:px-8 leading-tight"
                           style={{
                             color: service.accent,
                             fontFamily: "'Gambarino', serif",
@@ -217,7 +216,7 @@ export default function Services() {
                         }}
                       >
                         <h3
-                          className="text-2xl md:text-3xl font-light mb-5 text-white"
+                          className="text-xl md:text-3xl font-light mb-4 text-white"
                           style={{ fontFamily: "'Gambarino', serif" }}
                         >
                           {service.title}

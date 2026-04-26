@@ -179,6 +179,31 @@
   }
 }
 
+/* Service slide — responsive size (moved from inline style) */
+.service-slide {
+  width: min(80%, 900px);
+  height: 480px;
+}
+
+@media (max-width: 639px) {
+  .service-slide {
+    width: min(90%, 900px);
+    height: 400px;
+  }
+}
+
+/* Partner portrait — limit height on mobile so it doesn't dominate the section */
+.partner-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+@media (max-width: 767px) {
+  .partner-portrait {
+    aspect-ratio: auto;
+    height: 220px;
+  }
+}
+
 
 .hide-scrollbar {
   -ms-overflow-style: none;

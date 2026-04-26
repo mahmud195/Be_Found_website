@@ -55,8 +55,7 @@ export default function Partners() {
           >
             {/* Portrait Photo — full width on mobile (order 1), right column on desktop (order 2) */}
             <div
-              className={`w-full md:w-[40%] overflow-hidden order-1 md:order-2 transition-all duration-1000 delay-[400ms] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.03]'}`}
-              style={{ aspectRatio: '3 / 4' }}
+              className={`partner-portrait w-full md:w-[40%] overflow-hidden order-1 md:order-2 transition-all duration-1000 delay-[400ms] ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.03]'}`}
             >
               <img
                 src={partner.image}

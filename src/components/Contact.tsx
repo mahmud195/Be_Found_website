@@ -81,7 +81,7 @@ export default function Contact() {
             className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'
               }`}
           >
-            <div className="aspect-[4/5] bg-[#E6F0F0]/5 rounded-sm overflow-hidden border border-[#E6F0F0]/10">
+            <div className="aspect-[4/3] md:aspect-[4/5] bg-[#E6F0F0]/5 rounded-sm overflow-hidden border border-[#E6F0F0]/10">
               <img
                 src={contactImg}
                 alt="Studio space"
