@@ -1,0 +1,24 @@
+[
+  {
+    "x": 16,
+    "y": 638,
+    "w": 48,
+    "h": 48,
+    "display": "flex",
+    "opacity": "1",
+    "visibility": "visible",
+    "color": "rgba(255, 255, 255, 0.7)",
+    "bg": "rgba(0, 0, 0, 0.2)"
+  },
+  {
+    "x": 0,
+    "y": 0,
+    "w": 0,
+    "h": 0,
+    "display": "flex",
+    "opacity": "1",
+    "visibility": "visible",
+    "color": "rgba(255, 255, 255, 0.7)",
+    "bg": "rgba(0, 0, 0, 0)"
+  }
+]

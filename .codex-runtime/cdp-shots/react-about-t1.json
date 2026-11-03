@@ -1,0 +1,32 @@
+{
+  "title": "BeFound — Luxury Architecture & Interior Design Studio",
+  "scrollY": 730,
+  "sections": [
+    {
+      "id": "home",
+      "rect": {}
+    },
+    {
+      "id": "about",
+      "rect": {}
+    },
+    {
+      "id": "services",
+      "rect": {}
+    },
+    {
+      "id": "projects",
+      "rect": {}
+    },
+    {
+      "id": "partners",
+      "rect": {}
+    },
+    {
+      "id": "contact",
+      "rect": {}
+    }
+  ],
+  "nav": {},
+  "bodyClass": ""
+}

@@ -1,0 +1,56 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "title": "BeFound — Luxury Architecture & Interior Design Studio",
+  "bodyClass": "home wp-singular page-template-default page page-id-53 wp-theme-befound elementor-default elementor-kit-54",
+  "scrollY": 0,
+  "sections": [
+    {
+      "id": "home",
+      "top": 0,
+      "height": 810
+    },
+    {
+      "id": "about",
+      "top": 810,
+      "height": 1000
+    },
+    {
+      "id": "services",
+      "top": 1810,
+      "height": 1000
+    },
+    {
+      "id": "projects",
+      "top": 2810,
+      "height": 1000
+    },
+    {
+      "id": "partners",
+      "top": 3810,
+      "height": 1000
+    },
+    {
+      "id": "contact",
+      "top": 4810,
+      "height": 1000
+    }
+  ],
+  "h2": [
+    "About Us",
+    "Services",
+    "Projects",
+    "Villa 1",
+    "Villa 2",
+    "Villa 3",
+    "LUXURY RESIDENTIAL BUILDING",
+    "Apartment 1",
+    "Hotel 1",
+    "Eco Construction’s Office",
+    "Restaurant 1",
+    "Partners & Associates",
+    "Let's Create Together"
+  ],
+  "imgs": 45,
+  "videos": 1,
+  "wpBlocks": 0
+}

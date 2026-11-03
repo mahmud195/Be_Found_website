@@ -1,0 +1,57 @@
+{
+  "bodyClass": "home wp-singular page-template-default page page-id-51 wp-theme-befound",
+  "scrollY": 0,
+  "sections": [
+    {
+      "id": "home",
+      "top": 0,
+      "height": 810
+    },
+    {
+      "id": "about",
+      "top": 834,
+      "height": 1000
+    },
+    {
+      "id": "services",
+      "top": 1858,
+      "height": 1000
+    },
+    {
+      "id": "projects",
+      "top": 2882,
+      "height": 1000
+    },
+    {
+      "id": "partners",
+      "top": 3906,
+      "height": 1000
+    },
+    {
+      "id": "contact",
+      "top": 4930,
+      "height": 1000
+    }
+  ],
+  "h2": [
+    "About Us",
+    "Services",
+    "Projects",
+    "Villa 1",
+    "Villa 2",
+    "Villa 3",
+    "LUXURY RESIDENTIAL BUILDING",
+    "Apartment 1",
+    "Hotel 1",
+    "Eco Construction’s Office",
+    "Restaurant 1",
+    "Partners & Associates",
+    "Let's Create Together"
+  ],
+  "imgs": 54,
+  "videos": 1,
+  "plugins": [
+    "https://befound.design/wp-content/plugins/hostinger-reach/frontend/dist/blocks/subscription.css?ver=1779362469",
+    "https://befound.design/wp-content/plugins/hostinger-reach/frontend/dist/blocks/subscription-view.js?ver=1779362469"
+  ]
+}

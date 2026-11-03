@@ -1,0 +1,94 @@
+.befound-whatsapp-float {
+	position: fixed;
+	right: max(20px, env(safe-area-inset-right));
+	bottom: max(20px, env(safe-area-inset-bottom));
+	z-index: 90;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: #25d366;
+	color: #fff;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.befound-whatsapp-float svg {
+	width: 30px;
+	height: 30px;
+}
+
+.befound-whatsapp-float:hover {
+	background: #128c7e;
+}
+
+.befound-whatsapp-float:focus-visible {
+	outline: 3px solid #fff;
+	outline-offset: 3px;
+}
+
+.befound-contact-phone {
+	position: relative;
+	display: inline-block;
+}
+
+.befound-contact-phone-menu {
+	position: absolute;
+	left: 0;
+	bottom: calc(100% + 8px);
+	z-index: 80;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px;
+	border: 1px solid rgba(230, 240, 240, 0.16);
+	border-radius: 2px;
+	background: rgba(37, 40, 42, 0.96);
+	box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+	backdrop-filter: blur(8px);
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(6px);
+	transition: opacity 0.2s ease, transform 0.2s ease;
+	white-space: nowrap;
+}
+
+.befound-contact-phone.is-open .befound-contact-phone-menu {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0);
+}
+
+.befound-contact-phone-menu a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 30px;
+	padding: 0 10px;
+	border: 1px solid rgba(230, 240, 240, 0.12);
+	border-radius: 2px;
+	color: rgba(230, 240, 240, 0.72);
+	font-size: 12px;
+	line-height: 1;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.befound-contact-phone-menu a:hover {
+	color: #e6f0f0;
+	border-color: rgba(230, 240, 240, 0.4);
+	background-color: rgba(230, 240, 240, 0.08);
+}
+
+@media (max-width: 480px) {
+	.befound-contact-phone-menu {
+		left: -2px;
+	}
+
+	.befound-contact-phone-menu a {
+		padding: 0 8px;
+		font-size: 11px;
+	}
+}

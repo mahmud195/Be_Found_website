@@ -21,3 +21,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# added by archive 2026-11-03
+node_modules/
+dist/
+.cache/

@@ -1,0 +1,54 @@
+{
+  "bodyClass": "home wp-singular page-template-default page page-id-53 wp-theme-befound",
+  "scrollY": 2730,
+  "sections": [
+    {
+      "id": "home",
+      "top": -2730,
+      "height": 810
+    },
+    {
+      "id": "about",
+      "top": -1920,
+      "height": 1000
+    },
+    {
+      "id": "services",
+      "top": -920,
+      "height": 1000
+    },
+    {
+      "id": "projects",
+      "top": 80,
+      "height": 1000
+    },
+    {
+      "id": "partners",
+      "top": 1080,
+      "height": 1000
+    },
+    {
+      "id": "contact",
+      "top": 2080,
+      "height": 1000
+    }
+  ],
+  "h2": [
+    "About Us",
+    "Services",
+    "Projects",
+    "Villa 1",
+    "Villa 2",
+    "Villa 3",
+    "LUXURY RESIDENTIAL BUILDING",
+    "Apartment 1",
+    "Hotel 1",
+    "Eco Construction’s Office",
+    "Restaurant 1",
+    "Partners & Associates",
+    "Let's Create Together"
+  ],
+  "imgs": 45,
+  "videos": 1,
+  "plugins": []
+}
